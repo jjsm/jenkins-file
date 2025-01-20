@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    environment{
+        INSTAGRAM="@jjsm"
+    }
+    stages {
+        stage("Saludo 1") {
+            steps {
+                echo "Hola Desde Saludo 1"
+            }
+        }
+        stage("Saludo 2") {
+            steps {
+                echo "Hola Desde Saludo 2, paso 1"
+                echo "Hola Desde Saludo 2, paso 2"
+
+            }
+        }
+        stage("Imprimir Variables de Entorno") {
+            steps {
+                echo "${env.INSTAGRAM}"
+                echo "${INSTAGRAM}"
+                echo "$INSTAGRAM"
+                echo "#################################"
+                echo "#################################"
+
+            }
+        }
+    }
+}
